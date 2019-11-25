@@ -53,7 +53,7 @@ class EnvManager
      * @param \stdClass $envData
      * @return bool
      */
-    public function createEnv(\stdClass $envData): bool
+    public function createEnvFile(\stdClass $envData): bool
     {
         $env = '';
         foreach ($envData as $key => $value) {
@@ -63,5 +63,15 @@ class EnvManager
         $envFile = file_put_contents($this->getBaseDir() . '/.env', $env);
 
         return (bool) $envFile;
+    }
+
+    /**
+     * @param \stdClass $envData
+     */
+    public function addEnvVars(\stdClass $envData): void
+    {
+        foreach ($envData as $key => $value) {
+            putenv("{$key}={$value}");
+        }
     }
 }

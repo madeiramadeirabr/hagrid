@@ -30,17 +30,20 @@ if (!function_exists('create_env_file')) {
      *
      * @param string $baseDir
      * @param string $secretId
+     * @return bool
      * @throws \MMSecretsManager\Exception\SecretsManagerException
      */
-    function create_env_file(string $baseDir, string $secretId)
+    function create_env_file(string $baseDir, string $secretId): bool
     {
         $envManager = (new EnvManager($baseDir));
 
         if (!$envManager->verifyEnvExists()) {
             $secretValue = retrive_secrets($secretId);
 
-            $envManager->createEnvFile(json_decode($secretValue));
+            $fileCreated = $envManager->createEnvFile(json_decode($secretValue));
         }
+
+        return $fileCreated;
     }
 }
 
@@ -52,7 +55,7 @@ if (!function_exists('add_env_vars')) {
      * @param string $secretId
      * @throws \MMSecretsManager\Exception\SecretsManagerException
      */
-    function add_env_vars(string $secretId)
+    function add_env_vars(string $secretId): void
     {
         $envManager = (new EnvManager());
 

@@ -4,8 +4,11 @@ Simplified integration with AWS Secrets Manager.
 
 ## Getting Started
 
-The purpose of this package is to simplify integration with AWS Secrets Manager. So your responsibility goes to data recovery. 
-The use of recovered data will depend on the structure of each application.
+The purpose of this package is to simplify integration with AWS Secrets Manager, providing an easy way to retrive data
+stored.
+
+All helpers considers that you have an role in EC2. This role must be allowed to access secrets manager. If EC2 don't have
+role to access SM, you need to create you own helpers using qws id and key to authenticate. All methods are explained here.
 
 ### Prerequisites
 
@@ -25,47 +28,44 @@ composer require madeiramadeirabr/hagrid
 
 ## Basic Usage
 
-Integration can be accomplished in two ways.
+Basic integration can be accomplished in three ways.
 
-### First Method
+### First Method: Raw Data Retrive
 
-Instantiating the SecretsManager class and calling the setters.
+This way retrive the raw json from secrets manager. This is useful if you application need to manipulate environment variables
+before save it.
 
-```
-$secretsManager = new SecretsManager();
-
-$secretsManager->setId($myAwsId)
-    ->setKey($myAwsKey)
-    ->setRegion($awsRegion)
-    ->setSecretName($secretName);
-```
-
-### Second Method
-
-Instantiating the SecretsManager with AWS data.
+To do that, call secrets manager helper, as in the example below:
 
 ```
-$secretsManager = (new SecretsManager($myAwsId, $myAwsKey, $awsRegion, $secretName));
+$rawData = secrets_manager($secretId);
 ```
 
-### And Finally
-
-After using either of the above two methods, call the method that performs data recovery.
+The response will be something like that:
 
 ```
-$secretsManager->getSecretValue();
+{"APP_NAME": "My App Name", "APP_ENV": "production"}
 ```
 
-### Response
+### Second Method: Create .env File
 
-The response of the method 'getSecretValue' will be something like this.
+This method will verify if .env file exists, if it don't, it will be created from data retrived from secrets manager.
 
 ```
-{
-    "info1": "abc",
-    "info2": "xyz"
-}
+$fileCreated = create_env_file($directory, $secretId);
 ```
+
+The response will be TRUE, if the file was created, and FALSE, if don't.
+
+### Third Method: Save data on environment
+
+This method will read data from secrets manager and save using putenv.
+
+```
+add_env_vars($secretId);
+```
+
+This method don't have any response.
 
 ## Authors
 

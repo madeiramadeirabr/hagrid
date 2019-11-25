@@ -1,1 +1,26 @@
-{}
+{
+  "name": "madeiramadeirabr/hagrid",
+  "description": "Simplified integration with aws secrets manager.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+	"name": "Lucas Praxedes",
+      "email": "lucas.praxedes@madeiramadeira.com.br"
+
+    }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "files" : [
+      "src/helpers.php"
+    ],
+    "psr-4": {
+      "MMSecretsManager\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^7.1",
+    "aws/aws-sdk-php": "^3.112"
+  }
+} 

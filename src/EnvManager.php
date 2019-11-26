@@ -4,7 +4,7 @@ namespace Hagrid;
 
 /**
  * Class EnvManager
- * @package MMSecretsManager
+ * @package Hagrid
  */
 class EnvManager
 {

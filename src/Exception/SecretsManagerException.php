@@ -5,7 +5,7 @@ namespace Hagrid\Exception;
 
 /**
  * Class SecretsManagerException
- * @package MMSecretsManager
+ * @package Hagrid\Exception
  */
 class SecretsManagerException extends \Exception
 {

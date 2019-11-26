@@ -5,11 +5,11 @@ namespace Hagrid;
 use Aws\Credentials\Credentials;
 use Aws\SecretsManager\SecretsManagerClient;
 use Aws\Exception\AwsException;
-use MMSecretsManager\Exception\SecretsManagerException;
+use Hagrid\Exception\SecretsManagerException;
 
 /**
  * Class SecretsManager
- * @package MMSecretsManager
+ * @package Hagrid
  */
 class SecretsManager
 {

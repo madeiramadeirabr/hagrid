@@ -1,7 +1,7 @@
 <?php
 
-use \MMSecretsManager\SecretsManager;
-use \MMSecretsManager\EnvManager;
+use \Hagrid\SecretsManager;
+use \Hagrid\EnvManager;
 
 if (!function_exists('retrive_secrets')) {
 
@@ -11,7 +11,7 @@ if (!function_exists('retrive_secrets')) {
      * @param string $secretId
      * @param bool $verifyGlobals
      * @return mixed
-     * @throws \MMSecretsManager\Exception\SecretsManagerException
+     * @throws \Hagrid\Exception\SecretsManagerException
      */
     function retrive_secrets(string $secretId): string
     {
@@ -31,7 +31,7 @@ if (!function_exists('create_env_file')) {
      * @param string $baseDir
      * @param string $secretId
      * @return bool
-     * @throws \MMSecretsManager\Exception\SecretsManagerException
+     * @throws \Hagrid\Exception\SecretsManagerException
      */
     function create_env_file(string $baseDir, string $secretId): bool
     {
@@ -53,7 +53,7 @@ if (!function_exists('add_env_vars')) {
      * Add envronment variables, read from secrets manager, on server.
      *
      * @param string $secretId
-     * @throws \MMSecretsManager\Exception\SecretsManagerException
+     * @throws \Hagrid\Exception\SecretsManagerException
      */
     function add_env_vars(string $secretId): void
     {

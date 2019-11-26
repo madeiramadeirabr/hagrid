@@ -44,7 +44,10 @@ $rawData = secrets_manager($secretId);
 The response will be something like that:
 
 ```
-{"APP_NAME": "My App Name", "APP_ENV": "production"}
+{
+    "APP_NAME": "My App Name", 
+    "APP_ENV": "production"
+}
 ```
 
 ### Second Method: Create .env File
@@ -70,6 +73,46 @@ This method doesn't have any response.
 ## Use without helpers
 
 If EC2 doesn't have
+
+### First Method
+
+Instantiating the SecretsManager class and calling the setters.
+
+```
+$secretsManager = new SecretsManager();
+
+$secretsManager->setSecretId($secretId)
+    ->setRegion($awsRegion)
+    ->setId($myAwsId)
+    ->setKey($myAwsKey);
+```
+
+### Second Method
+
+Instantiating the SecretsManager with AWS data.
+
+```
+$secretsManager = new SecretsManager($secretId, $awsRegion, $myAwsId, $myAwsKey);
+```
+
+### And Finally
+
+After using either of the above two methods, call the method that performs data recovery.
+
+```
+$secretsManager->getSecretValue();
+```
+
+### Response
+
+The response of the method 'getSecretValue' will be something like this.
+
+```
+{
+    "APP_NAME": "My App Name", 
+    "APP_ENV": "production"
+}
+```
 
 ## Authors
 

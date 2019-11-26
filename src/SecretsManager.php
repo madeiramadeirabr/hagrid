@@ -1,6 +1,6 @@
 <?php
 
-namespace MMSecretsManager;
+namespace Hagrid;
 
 use Aws\Credentials\Credentials;
 use Aws\SecretsManager\SecretsManagerClient;

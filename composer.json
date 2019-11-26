@@ -16,7 +16,7 @@
       "src/helpers.php"
     ],
     "psr-4": {
-      "MMSecretsManager\\": "src/"
+      "Hagrid\\": "src/"
     }
   },
   "require": {

@@ -7,8 +7,8 @@ Simplified integration with AWS Secrets Manager.
 The purpose of this package is to simplify integration with AWS Secrets Manager, providing an easy way to retrive data
 stored.
 
-All helpers considers that you have an role in EC2. This role must be allowed to access secrets manager. If EC2 don't have
-role to access SM, you need to create you own helpers using qws id and key to authenticate. All methods are explained here.
+All helpers considers that you have an role in EC2. This role must be allowed to access secrets manager. If EC2 doesn't has
+role to access SM, you need to create you own helpers using aws id and key to authenticate. All methods are explained here.
 
 ### Prerequisites
 
@@ -65,7 +65,11 @@ This method will read data from secrets manager and save using putenv.
 add_env_vars($secretId);
 ```
 
-This method don't have any response.
+This method doesn't have any response.
+
+## Use without helpers
+
+If EC2 doesn't have
 
 ## Authors
 

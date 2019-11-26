@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MMSecretsManager\Exception;
+namespace Hagrid\Exception;
 
 /**
  * Class SecretsManagerException

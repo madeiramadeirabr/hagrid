@@ -72,7 +72,7 @@ This method doesn't have any response.
 
 ## Use without helpers
 
-If EC2 doesn't have
+If EC2 doesn't have role, you can instatiate SecretsManager and pass the the credentials to authenticate.
 
 ### First Method
 
@@ -89,7 +89,7 @@ $secretsManager->setSecretId($secretId)
 
 ### Second Method
 
-Instantiating the SecretsManager with AWS data.
+Instantiating the SecretsManager with AWS credentials.
 
 ```
 $secretsManager = new SecretsManager($secretId, $awsRegion, $myAwsId, $myAwsKey);
@@ -97,10 +97,10 @@ $secretsManager = new SecretsManager($secretId, $awsRegion, $myAwsId, $myAwsKey)
 
 ### And Finally
 
-After using either of the above two methods, call the method that performs data recovery.
+After using either of the two methods above, call the method that performs data recovery.
 
 ```
-$secretsManager->getSecretValue();
+$secretValue = $secretsManager->getSecretValue();
 ```
 
 ### Response

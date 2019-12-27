@@ -21,6 +21,6 @@
   },
   "require": {
     "php": "^7.1",
-    "aws/aws-sdk-php": "^3.112"
+    "aws/aws-sdk-php": "3.*"
   }
 } 

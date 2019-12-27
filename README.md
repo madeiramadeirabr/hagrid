@@ -116,6 +116,6 @@ The response of the method 'getSecretValue' will be something like this.
 
 ## Authors
 
-* **Lucas Praxedes** - *Initial work* - [Lucas Praxedes](https://github.com/kumasekuraprax)
+* **Lucas Praxedes** - *Initial work* - [Lucas Praxedes](https://github.com/lpraxedes)
 
 See also the list of [contributors](https://github.com/madeiramadeirabr/hagrid/graphs/contributors) who participated in this project.

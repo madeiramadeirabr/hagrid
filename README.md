@@ -37,7 +37,7 @@ before save it.
 To do that, call secrets manager helper, as in the example below:
 
 ```
-$rawData = secrets_manager($secretId);
+$rawData = retrive_secrets($secretId);
 ```
 
 The response will be something like that:

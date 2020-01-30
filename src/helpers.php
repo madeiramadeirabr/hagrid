@@ -35,6 +35,8 @@ if (!function_exists('create_env_file')) {
      */
     function create_env_file(string $baseDir, string $secretId): bool
     {
+        $fileCreated = false;
+
         $envManager = (new EnvManager($baseDir));
 
         if (!$envManager->verifyEnvExists()) {

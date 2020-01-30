@@ -4,8 +4,7 @@ Simplified integration with AWS Secrets Manager.
 
 ## Getting Started
 
-The purpose of this package is to simplify integration with AWS Secrets Manager, providing an easy way to retrive data
-stored.
+The purpose of this package is to simplify integration with AWS Secrets Manager, providing an easy way to retrive stored data.
 
 All helpers considers that you have an role in EC2. This role must be allowed to access secrets manager. If EC2 doesn't has
 role to access SM, you need to create you own helpers using aws id and key to authenticate. All methods are explained here.

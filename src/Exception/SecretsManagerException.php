@@ -40,4 +40,12 @@ class SecretsManagerException extends \Exception
     {
         return new self("Secret id can't be empty.", 400);
     }
+
+    /**
+     * @return SecretsManagerException
+     */
+    public static function invalidEnvironment(): SecretsManagerException
+    {
+        return new self("Invalid environment.", 400);
+    }
 }

@@ -37,7 +37,7 @@ before save it.
 To do that, call secrets manager helper, as in the example below:
 
 ```
-$rawData = retrive_secrets($secretId);
+$rawData = retrive_secrets($secretId, $env);
 ```
 
 The response will be something like that:
@@ -54,7 +54,7 @@ The response will be something like that:
 This method will verify if .env file exists, if it don't, it will be created from data retrived from secrets manager.
 
 ```
-$fileCreated = create_env_file($directory, $secretId);
+$fileCreated = create_env_file($directory, $secretId, $env);
 ```
 
 The response will be TRUE, if the file was created, and FALSE, if don't.
@@ -64,7 +64,7 @@ The response will be TRUE, if the file was created, and FALSE, if don't.
 This method will read data from secrets manager and save using putenv.
 
 ```
-add_env_vars($secretId);
+add_env_vars($secretId, $env);
 ```
 
 This method doesn't have any response.

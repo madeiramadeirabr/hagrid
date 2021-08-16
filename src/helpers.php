@@ -50,7 +50,7 @@ if (!function_exists('create_env_file')) {
         $envManager = (new EnvManager($baseDir));
 
         if (!$envManager->verifyEnvExists()) {
-            $secretValue = retrive_secrets($secretId);
+            $secretValue = retrive_secrets($secretId, $env);
 
             $fileCreated = $envManager->createEnvFile(json_decode($secretValue));
         }
@@ -72,7 +72,7 @@ if (!function_exists('add_env_vars')) {
     {
         $envManager = (new EnvManager());
 
-        $secretValue = retrive_secrets($secretId);
+        $secretValue = retrive_secrets($secretId, $env);
 
         $envManager->addEnvVars(json_decode($secretValue));
     }

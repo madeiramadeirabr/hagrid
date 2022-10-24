@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: hagrid
+  annotations:
+    github.com/project-slug: madeiramadeirabr/hagrid
+  tags:
+    - aws
+    - cloud
+    - devops
+    - terraform
+spec:
+  type: iac
+  lifecycle: production
+  owner: squad-dev-ops-admin

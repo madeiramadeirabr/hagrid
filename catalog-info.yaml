@@ -2,6 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
   name: hagrid
+  description: integracao simplificada com o aws secrets manager
   annotations:
     github.com/project-slug: madeiramadeirabr/hagrid
   tags:
@@ -9,7 +10,8 @@ metadata:
     - cloud
     - devops
     - terraform
+    - php
 spec:
   type: iac
-  lifecycle: production
-  owner: squad-dev-ops-admin
+  lifecycle: deprecated
+  owner: team-platform-engineering-admin
